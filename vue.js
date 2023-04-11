@@ -12,19 +12,19 @@ Vue.component('datoscliente',{
         <form class="row" id="form1">
             <div class="form-group col-md-3">
                 <label for="">Nombre</label>
-                <input type="text" class="form-control" placeholder="Escriba aquí su nombre" id="NombreCliente"/></input>
+                <input type="text" class="form-control" placeholder="Escriba aquí su nombre" v-model="NombreCliente"/></input>
             </div>
              <div class="form-group col-md-3">
                 <label for="">Cedula</label>
-                <input type="text" class="form-control" placeholder="Escriba aquí su Cedula" id="CedulaCliente"/></input>
+                <input type="text" class="form-control" placeholder="Escriba aquí su Cedula" v-model="CedulaCliente"/></input>
             </div>
             <div class="form-group col-md-3">
                 <label for="">Número de la factura</label>
-                <input type="text" class="form-control" placeholder="ejm:12345678" id="NumeroFactura"/></input>
+                <input type="text" class="form-control" placeholder="ejm:12345678" v-model="NumeroFactura"/></input>
             </div>
             <div class="form-group col-md-3">
                 <label for="">Fecha</label>
-                <input type="date" class="form-control" placeholder="ejm:12345678" id="FechaFactura"/></input>
+                <input type="date" class="form-control" placeholder="ejm:12345678" v-model="FechaFactura"/></input>
             </div>
         </form>
     </div>
@@ -82,14 +82,44 @@ Vue.component('tablaproductos',{
         </thead>
     </table>
 </div>
-<button class="btn btn-primary col-12" id="AgregarFactura">Agregar Factura</button>
-</section class="row">`
+<button class="btn btn-primary col-12" @click="AgregarFactura()">Agregar Factura</button>
+</section class="row">`,
+
+methods:{
+    AgregarFactura(){
+
+    }
+}
 }),
 
 new Vue({
     el: '#main',
     data:{
-        Saludar: 'Saludar',
+        articulosComprados: [],
+        factura:
+        {
+            NumeroFactura:"",
+            FechaFactura:"",
+            Cliente:
+                {
+            NombreCliente:'',
+            CedulaCliente:"",
+                },
+
+        },
+        
+        producto:
+            {
+                codigo:"",
+                nombre: "",
+                valor:"",
+                cantidad: "",
+                total:"",
+
+            },
+
+        
+
     },
 });
 
