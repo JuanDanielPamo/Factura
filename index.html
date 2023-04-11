@@ -50,14 +50,21 @@
                     <div class="card-body">
                         <form class="row">
                             <div class="form-group col-2"><label for="">Cantidad</label>
-                                <input type="number" class="form-control" id="CantidadProducto"/></div>
+                                <input type="number" class="form-control" id="InputCantidad"/></div>
                             <div class="form-group col-5"><label for="">Producto</label>
-                                <select class="form-control" id="SelectProducto"></select></div>
+                                <select class="form-control" id="SelectProducto">
+                                    <option value="0">--Seleccione su producto--</option>
+                                    <option value="">Producto 1</option>
+                                    <option value="">Producto 2</option>
+                                    <option value="">Producto 3</option>
+                                    <option value="">Producto 4</option>
+                                    <option value="">Producto 5</option>
+                                </select></div>
                             <div class="form-group col-md"><label for="">Precio unidad</label>
-                                <input type="text" class="form-control"/></div>
+                                <input type="number" class="form-control" id="InputPrecioUnitario"/></div>
                             <div class="form-group col-md"><label for="">Total</label>
-                                <input type="text" class="form-control"/></div>
-                            <div class="form-group col-md">
+                                <input type="number" class="form-control" id="InputTotal"/></div>
+                            <div class="form-group col-md mt-4">
                                 <button class="btn btn-primary">
                                     Agregar
                                 </button>
@@ -80,7 +87,8 @@
                     </thead>
                 </table>
             </div>
-        </section>
+        </section class="row">
+        <button class="btn btn-primary col-md-12">Agregar Factura</button>
     </main>
 <script src="vue.js"></script>
 </body>
